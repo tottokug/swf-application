@@ -6,7 +6,7 @@ import com.amazonaws.services.simpleworkflow.flow.ActivityWorker;
 import com.amazonaws.services.simpleworkflow.flow.WorkerBase;
 import com.tottokug.activity.SampleActivitiesClientImpl;
 
-public class ActivityHost extends AbstractHost {
+public class ActivityHost extends HostAbstract {
 
   public ActivityHost(String domain, boolean b) {
     super(domain, b);

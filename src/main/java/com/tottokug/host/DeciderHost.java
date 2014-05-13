@@ -7,7 +7,7 @@ import com.amazonaws.services.simpleworkflow.flow.WorkerBase;
 import com.amazonaws.services.simpleworkflow.flow.WorkflowWorker;
 import com.tottokug.workflow.SampleWorkflowImpl;
 
-public class DeciderHost extends AbstractHost {
+public class DeciderHost extends HostAbstract {
   public static void main(String[] args) {
     String domain = "sample";
     if (args.length > 0) {
