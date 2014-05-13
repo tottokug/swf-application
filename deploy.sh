@@ -8,10 +8,7 @@ mvn clean test
 mvn archetype:create-from-project
 
 
-
 pushd target/generated-sources/archetype/
-
-  
   mvn package
 popd
 
