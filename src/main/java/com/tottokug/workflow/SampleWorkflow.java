@@ -5,9 +5,9 @@ import com.amazonaws.services.simpleworkflow.flow.annotations.Workflow;
 import com.amazonaws.services.simpleworkflow.flow.annotations.WorkflowRegistrationOptions;
 
 @Workflow
-@WorkflowRegistrationOptions(defaultExecutionStartToCloseTimeoutSeconds = 0)
+@WorkflowRegistrationOptions(defaultExecutionStartToCloseTimeoutSeconds = 100)
 public interface SampleWorkflow {
 
-  @Execute(version = "1.0.0-SNAPSHOT")
+  @Execute(version = "1.0-SNAPSHOT")
   public void workflow();
 }

@@ -9,7 +9,7 @@ import com.tottokug.workflow.SampleWorkflowImpl;
 
 public class DeciderHost extends HostAbstract {
   public static void main(String[] args) {
-    String domain = "sample";
+    String domain = "sample-maven";
     if (args.length > 0) {
       domain = args[0];
     }

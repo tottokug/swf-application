@@ -6,7 +6,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import com.amazonaws.auth.AWSCredentialsProviderChain;
 import com.amazonaws.auth.ClasspathPropertiesFileCredentialsProvider;
+import com.amazonaws.auth.InstanceProfileCredentialsProvider;
 import com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow;
 import com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflowClient;
 import com.amazonaws.services.simpleworkflow.flow.WorkerBase;
@@ -34,7 +36,7 @@ public abstract class HostAbstract extends Thread {
   }
 
   protected void init() {
-    this.swfService = new AmazonSimpleWorkflowClient(new ClasspathPropertiesFileCredentialsProvider());
+    this.swfService = new AmazonSimpleWorkflowClient(new AWSCredentialsProviderChain(new InstanceProfileCredentialsProvider(), new ClasspathPropertiesFileCredentialsProvider()));
     this.activeTaskList = new ArrayList<String>();
     this.halt_ = false;
     if (this.test) {
@@ -55,7 +57,6 @@ public abstract class HostAbstract extends Thread {
 
   List<String> activeTaskList;
 
-  @Override
   public void run() {
     this.worker = getWorker();
     this.worker.start();

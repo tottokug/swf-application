@@ -9,6 +9,7 @@ public class SampleWorkflowImpl implements SampleWorkflow {
 
   @Override
   public void workflow() {
+    System.out.println("workflow called");
     sampleActivitiesClient.activity();
   }
 

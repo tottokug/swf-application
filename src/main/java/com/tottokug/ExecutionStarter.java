@@ -12,7 +12,7 @@ import com.tottokug.workflow.SampleWorkflowClientExternalFactoryImpl;
 public class ExecutionStarter {
 
   public static void main(String[] args) {
-    String domain = "sample";
+    String domain = "sample-maven";
     if (args.length > 0) {
       domain = args[0];
     }

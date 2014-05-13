@@ -5,7 +5,8 @@
       <groupId>com.tottokug</groupId>
       <artifactId>swf-application-archetype</artifactId>
       <version>1.7.8.1</version>
-      <repository>http://mvn.tottokug.com/</repository>
+      <!-- repository>http://mvn.tottokug.com/</repository -->
+      <repository>https://s3-ap-northeast-1.amazonaws.com/mvn.tottokug.com/</repository>
     </archetype>
   </archetypes>
 </archetype-catalog>
