@@ -7,9 +7,14 @@ VERSION=$(cat pom.xml  |grep version |head -n 1 |perl -pe 's/.*?>(.*?)<.*/\1/g')
 mvn clean test
 mvn archetype:create-from-project
 
+cp src/main/resources/META-INF/maven/archtype-matadata.xml target/generated-sources/archetype/src/main/resources/META-INF/maven/archetype-metadata.xml
 
 pushd target/generated-sources/archetype/
-#  mvn package
+  pushd src/main/resources/archetype-resources
+    rm -rf .settings catalogs deploy.sh
+  popd
+  
+  mvn package
 popd
 
 # catalog upload
