@@ -3,7 +3,7 @@
 
 	<groupId>com.tottokug</groupId>
 	<artifactId>swf-application</artifactId>
-	<version>1.7.9</version>
+	<version>1.7.10</version>
 	<packaging>jar</packaging>
 
 	<name>swf-application</name>
