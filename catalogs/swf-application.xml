@@ -31,5 +31,11 @@
       <version>1.7.12</version>
       <repository>http://mvn.tottokug.com/</repository>
     </archetype>
+    <archetype>
+      <groupId>com.tottokug</groupId>
+      <artifactId>swf-application-archetype</artifactId>
+      <version>1.7.13</version>
+      <repository>http://mvn.tottokug.com/</repository>
+    </archetype>
   </archetypes>
 </archetype-catalog>
