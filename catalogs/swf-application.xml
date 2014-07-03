@@ -1,16 +1,1 @@
-<archetype-catalog>
-  <archetypes>
-    <archetype>
-      <groupId>com.tottokug</groupId>
-      <artifactId>swf-application-archetype</artifactId>
-      <version>1.8.0</version>
-      <repository>http://mvn.tottokug.com/</repository>
-    </archetype>
-    <archetype>
-      <groupId>com.tottokug</groupId>
-      <artifactId>swf-application-archetype</artifactId>
-      <version>1.8.1</version>
-      <repository>http://mvn.tottokug.com/</repository>
-    </archetype>
-  </archetypes>
-</archetype-catalog>
+swf-application-1.8.xml

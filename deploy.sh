@@ -18,7 +18,9 @@ pushd target/generated-sources/archetype/
 popd
 
 # catalog upload
-aws s3 cp --acl public-read catalogs/swf-application.xml s3://mvn.tottokug.com/catalogs/swf-application.xml
+#aws s3 cp --acl public-read catalogs/swf-application-1.7.xml s3://mvn.tottokug.com/catalogs/
+aws s3 cp --acl public-read catalogs/swf-application-1.8.xml s3://mvn.tottokug.com/catalogs/
+aws s3 cp --acl public-read catalogs/swf-application.xml s3://mvn.tottokug.com/catalogs/
 
 # pom upload
 aws s3 cp --acl public-read ./target/generated-sources/archetype/pom.xml s3://mvn.tottokug.com/com/tottokug/swf-application-archetype/${VERSION}/swf-application-archetype-${VERSION}.pom
