@@ -67,4 +67,10 @@
       <repository>http://mvn.tottokug.com/</repository>
     </archetype>
   </archetypes>
+    <archetype>
+      <groupId>com.tottokug</groupId>
+      <artifactId>swf-application-archetype</artifactId>
+      <version>1.8.10</version>
+      <repository>http://mvn.tottokug.com/</repository>
+    </archetype>
 </archetype-catalog>
