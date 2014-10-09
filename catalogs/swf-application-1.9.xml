@@ -1,0 +1,10 @@
+<archetype-catalog>
+  <archetypes>
+    <archetype>
+      <groupId>com.tottokug</groupId>
+      <artifactId>swf-application-archetype</artifactId>
+      <version>1.9.0</version>
+      <repository>http://mvn.tottokug.com/</repository>
+    </archetype>
+  </archetypes>
+</archetype-catalog>
