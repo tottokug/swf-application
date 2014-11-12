@@ -3,7 +3,7 @@
 
 	<groupId>com.tottokug</groupId>
 	<artifactId>swf-application</artifactId>
-	<version>1.9.4</version>
+	<version>1.9.5</version>
 	<packaging>jar</packaging>
 
 	<name>swf-application</name>
@@ -30,7 +30,7 @@
 		<dependency>
 			<groupId>com.amazonaws</groupId>
 			<artifactId>aws-java-sdk-flow-build-tools</artifactId>
-			<version>1.9.4</version>
+			<version>1.9.5</version>
 		</dependency>
 	</dependencies>
 
