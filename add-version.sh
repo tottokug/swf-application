@@ -33,7 +33,8 @@ ALL_ROW=$(wc -l catalogs/swf-application.xml  |perl -pe "s/\s+(\d+)\s.*/\1/")
 cat catalogs/swf-application.xml |head -n ${ARCHETYPES_ROW} > catalogs/tmp.xml
 echo -e "${ARCHETYPE}" >> catalogs/tmp.xml
 cat catalogs/swf-application.xml |tail -n $(expr  ${ALL_ROW} - ${ARCHETYPES_ROW}) >> catalogs/tmp.xml
-
+echo pom.xml.tmp > pom.xml
+echo catalogs/tmp.xml > catalogs/swf-application.xml
 rm pom.xml.tmp catalogs/tmp.xml
 
 ./deploy.sh
