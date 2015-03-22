@@ -18,7 +18,7 @@ git checkout -b ${VERSION}
 
 
 # catalog 
-ARCHETYPE=`cat <<__EOT__
+ARCHETYPE=`cat <<- __EOT__
     <archetype>
       <groupId>com.tottokug</groupId>
       <artifactId>swf-application-archetype</artifactId>
@@ -28,6 +28,13 @@ ARCHETYPE=`cat <<__EOT__
 __EOT__`
 echo $ARCHETYPE
 cat pom.xml.skelton |perl -pe "s/##VERSION##/${VERSION}/g" > pom.xml.tmp
-sed -e "/\s*<archetypes/a ${ARCHETYPE}" catalogs/swf-application.xml
+
+ARCHETYPES_ROW=$(cat catalogs/swf-application.xml |grep -n "<archetypes" |head -n 1 |cut -d':' -f1)
+ALL_ROW=$(wc -l catalogs/swf-application.xml  |perl -pe "s/\s+(\d+)\s.*/\1/")
+cat catalogs/swf-application.xml |head -n ${ARCHETYPES_ROW} > catalogs/tmp.xml
+echo -e "${ARCHETYPE}" >> catalogs/tmp.xml
+cat catalogs/swf-application.xml |tail -n $(expr  ${ALL_ROW} - ${ARCHETYPES_ROW}) >> catalogs/tmp.xml
+
+
 
 
