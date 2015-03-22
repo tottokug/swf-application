@@ -11,7 +11,7 @@ cp src/main/resources/META-INF/maven/archetype-metadata.xml target/generated-sou
 
 pushd target/generated-sources/archetype/
   pushd src/main/resources/archetype-resources
-    rm -rf .settings catalogs deploy.sh
+    rm -rf .settings catalogs deploy.sh pom.skelton
   popd
   mvn clean
   mvn package

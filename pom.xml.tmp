@@ -30,7 +30,7 @@
 		<dependency>
 			<groupId>com.amazonaws</groupId>
 			<artifactId>aws-java-sdk-flow-build-tools</artifactId>
-			<version>#VERSION</version>
+			<version>1.9.10</version>
 		</dependency>
 	</dependencies>
 
