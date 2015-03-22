@@ -35,6 +35,12 @@ cat catalogs/swf-application.xml |head -n ${ARCHETYPES_ROW} > catalogs/tmp.xml
 echo -e "${ARCHETYPE}" >> catalogs/tmp.xml
 cat catalogs/swf-application.xml |tail -n $(expr  ${ALL_ROW} - ${ARCHETYPES_ROW}) >> catalogs/tmp.xml
 
+./deploy 
 
+git add . 
+git commit -m "${VERSION} added"
+git checkout master
+git marge ${VERSION}
+git push origin master
 
 
