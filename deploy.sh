@@ -1,4 +1,5 @@
 #!/bin/bash
+PROFILE=private
 
 VERSION=$(cat pom.xml  |grep version |head -n 1 |perl -pe 's/.*?>(.*?)<.*/\1/g')
 
@@ -18,21 +19,21 @@ pushd target/generated-sources/archetype/
 popd
 
 # catalog upload
-#aws s3 cp --acl public-read catalogs/swf-application-1.7.xml s3://mvn.tottokug.com/catalogs/
-aws s3 cp --acl public-read catalogs/swf-application-1.8.xml s3://mvn.tottokug.com/catalogs/
-aws s3 cp --acl public-read catalogs/swf-application.xml s3://mvn.tottokug.com/catalogs/
+#aws --profile ${PROFILE} s3 cp --acl public-read catalogs/swf-application-1.7.xml s3://mvn.tottokug.com/catalogs/
+aws --profile ${PROFILE} s3 cp --acl public-read catalogs/swf-application-1.8.xml s3://mvn.tottokug.com/catalogs/
+aws --profile ${PROFILE} s3 cp --acl public-read catalogs/swf-application.xml s3://mvn.tottokug.com/catalogs/
 
 # pom upload
-aws s3 cp --acl public-read ./target/generated-sources/archetype/pom.xml s3://mvn.tottokug.com/com/tottokug/swf-application-archetype/${VERSION}/swf-application-archetype-${VERSION}.pom
+aws --profile ${PROFILE} s3 cp --acl public-read ./target/generated-sources/archetype/pom.xml s3://mvn.tottokug.com/com/tottokug/swf-application-archetype/${VERSION}/swf-application-archetype-${VERSION}.pom
 
 #pom checksum upload
 shasum ./target/generated-sources/archetype/pom.xml |cut -d' ' -f1 > ./target/generated-sources/archetype/pom.xml.sha1
-aws s3 cp --acl public-read ./target/generated-sources/archetype/pom.xml.sha1 s3://mvn.tottokug.com/com/tottokug/swf-application-archetype/${VERSION}/swf-application-archetype-${VERSION}.pom.sha1
+aws --profile ${PROFILE} s3 cp --acl public-read ./target/generated-sources/archetype/pom.xml.sha1 s3://mvn.tottokug.com/com/tottokug/swf-application-archetype/${VERSION}/swf-application-archetype-${VERSION}.pom.sha1
 
 # jar upload
-aws s3 cp --acl public-read ./target/generated-sources/archetype/target/swf-application-archetype-${VERSION}.jar s3://mvn.tottokug.com/com/tottokug/swf-application-archetype/${VERSION}/swf-application-archetype-${VERSION}.jar
+aws --profile ${PROFILE} s3 cp --acl public-read ./target/generated-sources/archetype/target/swf-application-archetype-${VERSION}.jar s3://mvn.tottokug.com/com/tottokug/swf-application-archetype/${VERSION}/swf-application-archetype-${VERSION}.jar
 
 #jar checksum upload
 shasum ./target/generated-sources/archetype/target/swf-application-archetype-${VERSION}.jar |cut -d' ' -f1 > ./target/generated-sources/archetype/target/swf-application-archetype-${VERSION}.jar.sha1
 
-aws s3 cp --acl public-read ./target/generated-sources/archetype/target/swf-application-archetype-${VERSION}.jar.sha1 s3://mvn.tottokug.com/com/tottokug/swf-application-archetype/${VERSION}/swf-application-archetype-${VERSION}.jar.sha1
+aws --profile ${PROFILE} s3 cp --acl public-read ./target/generated-sources/archetype/target/swf-application-archetype-${VERSION}.jar.sha1 s3://mvn.tottokug.com/com/tottokug/swf-application-archetype/${VERSION}/swf-application-archetype-${VERSION}.jar.sha1
