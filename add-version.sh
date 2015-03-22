@@ -36,7 +36,7 @@ cat catalogs/swf-application.xml |tail -n $(expr  ${ALL_ROW} - ${ARCHETYPES_ROW}
 
 rm pom.xml.tmp catalogs/tmp.xml
 
-./deploy 
+./deploy.sh
 
 git add . 
 git commit -m "${VERSION} added"
