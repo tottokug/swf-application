@@ -15,7 +15,7 @@ fi
 VERSION=$1
 echo "VERSION=${VERSION}"
 git checkout -b ${VERSION}
-AWS_DEFAULT_REGION=ap-northeast-1
+export AWS_DEFAULT_REGION=ap-northeast-1
 
 # catalog 
 ARCHETYPE=`cat <<- __EOT__
