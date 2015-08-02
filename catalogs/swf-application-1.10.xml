@@ -3,6 +3,12 @@
     <archetype>
       <groupId>com.tottokug</groupId>
       <artifactId>swf-application-archetype</artifactId>
+      <version>1.10.5</version>
+      <repository>http://mvn.tottokug.com/</repository>
+    </archetype>
+    <archetype>
+      <groupId>com.tottokug</groupId>
+      <artifactId>swf-application-archetype</artifactId>
       <version>1.10.4</version>
       <repository>http://mvn.tottokug.com/</repository>
     </archetype>
