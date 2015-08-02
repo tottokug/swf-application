@@ -21,6 +21,8 @@ popd
 # catalog upload
 #aws --profile ${PROFILE} s3 cp --acl public-read catalogs/swf-application-1.7.xml s3://mvn.tottokug.com/catalogs/
 aws --profile ${PROFILE} s3 cp --acl public-read catalogs/swf-application-1.8.xml s3://mvn.tottokug.com/catalogs/
+aws --profile ${PROFILE} s3 cp --acl public-read catalogs/swf-application-1.9.xml s3://mvn.tottokug.com/catalogs/
+aws --profile ${PROFILE} s3 cp --acl public-read catalogs/swf-application-1.10.xml s3://mvn.tottokug.com/catalogs/
 aws --profile ${PROFILE} s3 cp --acl public-read catalogs/swf-application.xml s3://mvn.tottokug.com/catalogs/
 
 # pom upload
